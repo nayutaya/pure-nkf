@@ -9,6 +9,15 @@ class CoreTest < Test::Unit::TestCase
   end
 
   def test_convert_Z1
-    assert_equal("!", @module.convert_Z1("！"))
+    [
+      ["！", "!"],
+      ["＝", "="],
+      ["－", "-"],
+      ["　", " "],
+      ["Ｊ", "J"],
+      ["Ｒ", "R"],
+    ].each { |value, expected|
+      assert_equal(expected, @module.convert_Z1(value))
+    }
   end
 end
