@@ -16,6 +16,7 @@ class CoreTest < Test::Unit::TestCase
       ["　", " "],
       ["ＡＢＣＤＥＦＧＨＩＪＫＬＭＮＯＰＱＲＳＴＵＶＷＸＹＺ", "ABCDEFGHIJKLMNOPQRSTUVWXYZ"],
       ["ａｂｃｄｅｆｇｈｉｊｋｌｍｎｏｐｑｒｓｔｕｖｗｘｙｚ", "abcdefghijklmnopqrstuvwxyz"],
+      ["０１２３４５６７８９", "0123456789"],
     ].each { |value, expected|
       assert_equal(expected, @module.convert_Z1(value))
     }
