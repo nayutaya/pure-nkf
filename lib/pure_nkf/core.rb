@@ -1,15 +1,19 @@
 
 module PureNKF
+  Z1_TABLE = [
+    [/！/, "!"],
+    [/＝/, "="],
+    [/－/, "-"],
+    [/　/, " "],
+    [/Ｊ/, "J"],
+    [/Ｒ/, "R"],
+  ]
+
   def self.convert_Z1(value)
     value = value.dup
-    value.gsub!(/！/, "!")
-    value.gsub!(/＝/, "=")
-    value.gsub!(/－/, "-")
-    value.gsub!(/　/, " ")
-    value.gsub!(/Ｊ/, "J")
-    value.gsub!(/Ｒ/, "R")
-    value.gsub!(//, "")
-    value.gsub!(//, "")
+    Z1_TABLE.each { |pattern, replace|
+      value.gsub!(pattern, replace)
+    }
     return value
   end
 end
