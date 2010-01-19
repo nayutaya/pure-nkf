@@ -20,7 +20,8 @@ task :version do
 
   filename = File.join(File.dirname(__FILE__), "lib", "pure_nkf", "version.rb")
   File.open(filename, "wb") { |file|
-    file.puts
+    file.puts(%|# coding: utf-8|)
+    file.puts(%||)
     file.puts(%|module PureNKF|)
     file.puts(%|  VERSION = "#{next_version}"|)
     file.puts(%|end|)

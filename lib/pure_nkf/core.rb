@@ -1,3 +1,4 @@
+# coding: utf-8
 
 module PureNKF
   Z1_TABLE = [
