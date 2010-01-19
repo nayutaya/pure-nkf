@@ -10,6 +10,9 @@ class CoreTest < Test::Unit::TestCase
 
   def test_convert_Z1
     [
+      ["０１２３４５６７８９", "0123456789"],
+      ["ＡＢＣＤＥＦＧＨＩＪＫＬＭＮＯＰＱＲＳＴＵＶＷＸＹＺ", "ABCDEFGHIJKLMNOPQRSTUVWXYZ"],
+      ["ａｂｃｄｅｆｇｈｉｊｋｌｍｎｏｐｑｒｓｔｕｖｗｘｙｚ", "abcdefghijklmnopqrstuvwxyz"],
       ["！", "!"],
       ["＝", "="],
       ["－", "-"],
@@ -42,9 +45,6 @@ class CoreTest < Test::Unit::TestCase
       ["｀", "`"],
       ["｛｝", "{}"],
       ["｜", "|"],
-      ["ＡＢＣＤＥＦＧＨＩＪＫＬＭＮＯＰＱＲＳＴＵＶＷＸＹＺ", "ABCDEFGHIJKLMNOPQRSTUVWXYZ"],
-      ["ａｂｃｄｅｆｇｈｉｊｋｌｍｎｏｐｑｒｓｔｕｖｗｘｙｚ", "abcdefghijklmnopqrstuvwxyz"],
-      ["０１２３４５６７８９", "0123456789"],
     ].each { |value, expected|
       assert_equal(expected, @module.convert_Z1(value))
     }
