@@ -21,6 +21,7 @@ class CoreTest < Test::Unit::TestCase
       ["｛｜｝", "{|}"],
       ["—―−", "---"],
       ["〈〉", "<>"],
+      ["＼", "\\"],
     ].each { |value, expected|
       assert_equal(expected, @module.convert_Z1(value))
       assert_equal(
