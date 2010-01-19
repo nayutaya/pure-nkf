@@ -1,9 +1,16 @@
 
+require "rake/testtask"
 require "lib/pure_nkf/version"
 
 NAME = "nayutaya-pure-nkf"
 
-task :default => :gemspec
+task :default => :test
+
+Rake::TestTask.new do |test|
+  test.libs << "test"
+  test.test_files = Dir.glob("test/**/*_test.rb")
+  test.verbose    =  true
+end
 
 desc "bump version"
 task :version do
